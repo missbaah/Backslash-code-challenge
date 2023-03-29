@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import { products } from "../data.jsx";
+import CartContext from "./context/CartContext.js";
+import { useContext } from "react";
 
 const Store = () => {
+  const { addToCart, setAddToCart } = useContext(CartContext);
   const [items, setItems] = useState(products);
-  const [addToCart, setAddToCart] = useState([]);
 
   const handleAdd = (e) => {
     e.preventDefault();
@@ -18,7 +20,7 @@ const Store = () => {
     setAddToCart([...addToCart, product]);
   };
 
-  console.log(addToCart);
+  console.log(addToCart.length);
 
   const ListofProducts = items.map((product) => {
     return (
