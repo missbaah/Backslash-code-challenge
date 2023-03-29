@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { products } from "../data.jsx";
 
 const Store = () => {
+  const [items, setItems] = useState(products);
   const [addToCart, setAddToCart] = useState([]);
 
   const handleAdd = (e) => {
@@ -19,7 +20,7 @@ const Store = () => {
 
   console.log(addToCart);
 
-  const ListofProducts = products.map((product) => {
+  const ListofProducts = items.map((product) => {
     return (
       <div className={product.title} key={product.id}>
         <img src={product.thumbnail} alt={product.title} />
@@ -34,15 +35,24 @@ const Store = () => {
     );
   });
 
+  const handleFilter = (val) => {
+    const category = products.filter((product) => {
+      return product.category === val;
+    });
+    console.log(category);
+    setItems(category);
+  };
+
   return (
     <main>
       <h1>Shop the lastest items</h1>
-      <section>
+      <section className="filter-btns">
         Filter By
-        <button>Clothes</button>
-        <button>Stationary</button>
-        <button>Organisers</button>
-        <button>Drinkware</button>
+        <button onClick={() => handleFilter("clothes")}>Clothes</button>
+        <button onClick={() => handleFilter("stationary")}>Stationary</button>
+        <button onClick={() => handleFilter("organisers")}>Organisers</button>
+        <button onClick={() => handleFilter("drinkware")}>Drinkware</button>
+        <button onClick={() => setItems(products)}>All</button>
       </section>
       <section className="grid-container">{ListofProducts}</section>
     </main>

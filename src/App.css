@@ -15,7 +15,7 @@ a {
 nav {
   display: flex;
   justify-content: space-between;
-  padding: 18px 80px;
+  padding: 18px 50px;
 }
 
 img {
@@ -24,10 +24,13 @@ img {
   border-radius: 5px;
 }
 
+h1 {
+  text-align: center;
+}
 .grid-container {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  margin: 30px;
+  margin: 20px 30px;
   justify-items: center;
   gap: 30px;
 }
@@ -44,4 +47,11 @@ button {
   color: black;
   font-weight: 600;
   border-radius: 5px;
+}
+
+.filter-btns {
+  display: flex;
+  gap: 32px;
+  justify-content: flex-start;
+  margin: 0 80px;
 }
