@@ -3,7 +3,7 @@
 }
 
 body {
-  height: 90vh;
+  height: 100vh;
 }
 
 h4,
@@ -31,6 +31,7 @@ nav {
 main {
   position: absolute;
   top: 50px;
+  margin-bottom: 50px;
 }
 
 img {
@@ -114,6 +115,23 @@ span {
 
 .cart button:disabled {
   background-color: rgb(95, 94, 94);
+}
+
+main .end-text {
+  text-align: center;
+  margin: 20px 0px;
+}
+
+main .pop-up {
+  text-align: center;
+  border: 1px solid rgb(27, 25, 25);
+  background-color: black;
+  color: white;
+  padding: 5px;
+  width: 30vw;
+  position: sticky;
+  bottom: 55px;
+  margin: 0 auto;
 }
 
 @media only screen and (max-width: 768px) {

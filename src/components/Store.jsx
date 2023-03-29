@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { products } from "../data.jsx";
 import CartContext from "../context/CartContext.js";
 import { useContext } from "react";
+import PopUp from "./Popup.jsx";
 
 const Store = () => {
   const { addToCart, setAddToCart } = useContext(CartContext);
@@ -57,6 +58,8 @@ const Store = () => {
         <button onClick={() => setItems(products)}>All</button>
       </section>
       <section className="grid-container">{ListofProducts}</section>
+      <PopUp />
+      <p className="end-text">End of Products</p>
     </main>
   );
 };
