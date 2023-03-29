@@ -3,7 +3,11 @@ import { useContext } from "react";
 import CartContext from "../context/CartContext.js";
 
 const Cart = () => {
-  const { addToCart } = useContext(CartContext);
+  const { addToCart, setAddToCart } = useContext(CartContext);
+
+  const handleClearCart = () => {
+    setAddToCart([]);
+  };
 
   const ListOfCartItems = addToCart.map((item) => {
     return (
@@ -28,7 +32,10 @@ const Cart = () => {
         <p>Total</p>
         <p>₵ {total}</p>
       </div>
-      <button disabled> Proceed to CheckOut</button>
+      <section className="cart-btns">
+        <button onClick={handleClearCart}> Clear Cart</button>
+        <button disabled> Proceed to CheckOut</button>
+      </section>
     </div>
   );
 };
