@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { products } from "../data.jsx";
 import CartContext from "../context/CartContext.js";
 import { useContext } from "react";
@@ -7,6 +7,7 @@ import PopUp from "./Popup.jsx";
 const Store = () => {
   const { addToCart, setAddToCart } = useContext(CartContext);
   const [items, setItems] = useState(products);
+  const [showPopup, setshowPopup] = useState(false);
 
   const handleAdd = (e) => {
     e.preventDefault();
@@ -19,6 +20,10 @@ const Store = () => {
       }
     }
     setAddToCart([...addToCart, product]);
+    setshowPopup((showPopup) => !showPopup);
+    setTimeout(() => {
+      setshowPopup(false);
+    }, 300);
   };
 
   console.log(addToCart.length);
@@ -58,7 +63,7 @@ const Store = () => {
         <button onClick={() => setItems(products)}>All</button>
       </section>
       <section className="grid-container">{ListofProducts}</section>
-      <PopUp />
+      <PopUp trigger={handleAdd} showPopup={showPopup} />
       <p className="end-text">End of Products</p>
     </main>
   );

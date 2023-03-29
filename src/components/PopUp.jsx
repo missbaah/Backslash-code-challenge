@@ -1,7 +1,7 @@
 import React from "react";
 
-const PopUp = () => {
-  return <p className="pop-up">Added to cart</p>;
+const PopUp = ({ showPopup }) => {
+  return <p className={`${showPopup ? "active" : ""} pop-up`}>Added to cart</p>;
 };
 
 export default PopUp;
