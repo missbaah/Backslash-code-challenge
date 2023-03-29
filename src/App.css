@@ -1,3 +1,14 @@
 #root {
   margin: 0;
 }
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 18px 80px;
+}
