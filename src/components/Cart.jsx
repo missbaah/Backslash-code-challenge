@@ -9,14 +9,15 @@ const Cart = () => {
     return (
       <div key={item.id}>
         <p>{item.title}</p>
-        <p>{item.price}</p>
+        <p>₵ {item.price}</p>
       </div>
     );
   });
 
-  const total = addToCart.map((item) => {
-    return <p key={item.id}>{item.price}</p>;
-  });
+  const total = addToCart.reduce(
+    (accumulator, item) => accumulator + item.price,
+    0
+  );
 
   return (
     <div className="cart">
@@ -25,7 +26,7 @@ const Cart = () => {
         : ListOfCartItems}
       <div className="total">
         <p>Total</p>
-        <p>0</p>
+        <p>₵ {total}</p>
       </div>
       <button disabled> Proceed to CheckOut</button>
     </div>
