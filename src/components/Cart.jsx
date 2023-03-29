@@ -14,7 +14,22 @@ const Cart = () => {
     );
   });
 
-  return <div>{ListOfCartItems}</div>;
+  const total = addToCart.map((item) => {
+    return <p key={item.id}>{item.price}</p>;
+  });
+
+  return (
+    <div className="cart">
+      {addToCart.length == 0
+        ? "There are no items in your cart"
+        : ListOfCartItems}
+      <div className="total">
+        <p>Total</p>
+        <p>0</p>
+      </div>
+      <button disabled> Proceed to CheckOut</button>
+    </div>
+  );
 };
 
 export default Cart;
