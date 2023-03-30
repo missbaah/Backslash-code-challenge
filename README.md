@@ -31,8 +31,8 @@ A virtual store that allows users to find items, add to cart and filter based on
 
 ### Links
 
-[Hosted Link](https://backslashvirtualstore.netlify.app/)
-[Source Link](https://github.com/missbaah/Backslash-code-challenge)
+- [Hosted Link](https://backslashvirtualstore.netlify.app/)
+- [Source Link](https://github.com/missbaah/Backslash-code-challenge)
 
 ## Getting Started
 
