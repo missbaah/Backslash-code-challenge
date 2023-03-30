@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { products } from "../data.jsx";
 import CartContext from "../context/CartContext.js";
 import { useContext } from "react";
-import PopUp from "./Popup.jsx";
+import PopUp from "./PopUp.jsx";
 
 const Store = () => {
   const { addToCart, setAddToCart } = useContext(CartContext);
