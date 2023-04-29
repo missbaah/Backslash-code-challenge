@@ -53,18 +53,20 @@ const Store = () => {
 
   return (
     <main>
-      <h1>Shop the lastest items</h1>
-      <section className="filter-btns">
-        Filter By
-        <button onClick={() => handleFilter("clothes")}>Clothes</button>
-        <button onClick={() => handleFilter("stationary")}>Stationary</button>
-        <button onClick={() => handleFilter("organisers")}>Organisers</button>
-        <button onClick={() => handleFilter("drinkware")}>Drinkware</button>
-        <button onClick={() => setItems(products)}>All</button>
+      <section>
+        <h1>Shop the lastest items</h1>
+        <section className="filter-btns">
+          Filter By
+          <button onClick={() => handleFilter("clothes")}>Clothes</button>
+          <button onClick={() => handleFilter("stationary")}>Stationary</button>
+          <button onClick={() => handleFilter("organisers")}>Organisers</button>
+          <button onClick={() => handleFilter("drinkware")}>Drinkware</button>
+          <button onClick={() => setItems(products)}>All</button>
+        </section>
+        <section className="grid-container">{ListofProducts}</section>
+        <PopUp trigger={handleAdd} showPopup={showPopup} />
+        <p className="end-text">End of Products</p>
       </section>
-      <section className="grid-container">{ListofProducts}</section>
-      <PopUp trigger={handleAdd} showPopup={showPopup} />
-      <p className="end-text">End of Products</p>
     </main>
   );
 };
